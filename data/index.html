@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Deneyap Kontrol Paneli</title>
+  <meta charset="UTF-8">
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      text-align: center;
+      margin-top: 50px;
+    }
+    button {
+      padding: 15px 30px;
+      font-size: 18px;
+      background-color: #2e00b9;
+      color: white;
+      border: none;
+      cursor: pointer;
+    }
+    button:hover {
+      background-color: #220055;
+    }
+  </style>
+</head>
+<body>
+  <h1>Deneyap Kart Kontrol</h1>
+  <button onclick="butonaBas()">Buton</button>
+  <script>
+    function butonaBas() {
+      fetch('/buton')
+        .then(response => response.text())
+        .then(data => alert(data))
+        .catch(error => console.error('Hata:', error));
+    }
+  </script>
+</body>
+</html>
